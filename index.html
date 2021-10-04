@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap</title>
+  <!--Importing Bootstrap CSS-->
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+  crossorigin="anonymous"/>
+  <!--linking to css-->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body onload="reloadTaskCard()">
+  <!--Bootstrap JS-->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFY1zcLA8N1+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous">
+  </script>
+  <!--linking to js file-->
+  <script src="index.js"></script>
+
+  <!--Modal-->
+  <div class="modal fade" id="newcardmodal" tabindex="-1"
+      aria-labelledby="newCardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-container">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addNewModalLabel">Add New Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close">
+            <i class="fas fa-times"></i>      
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="imageURL" class="form-label">Image URL</label>
+            <input type="url" class="form-control" id="imageURL" placeholder="https://example.com/image.png"/>
+          </div>
+          <div class="mb-3">
+            <label for="taskTitle" class="form-label">Task Title</label>
+            <input type="text" class="form-control" id="taskTitle" placeholder="Learn Web Dev" required/>
+          </div>
+          <div class="mb-3">
+            <label for="Tags" class="form-label">Task Type</label>
+            <input type="text" class="form-control" id="Tags" placeholder="Work..." required/>
+          </div>
+          <div class="mb-3">
+            <label for="taskDescription" class="form-label">Task Description</label>
+            <textarea class="form-control" id="taskDescription" placeholder="https://example.com/image.png"
+            rows="4" required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" onclick="addCard()" data-bs-dismiss="modal">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+      <h1 class="navbar-brand font-weight-700">
+        <a href="#">TaskY</a>
+      </h1>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" 
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+          <span class="navbra-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"><!--me,mb==margin and spacing-->
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><strong>home</strong></a>
+          </li>
+        </ul>
+        <button 
+          class="btn btn-primary ml-auto"
+          data-bs-toggle="modal" 
+          data-bs-target="#addNewModal">
+            <i class="fas fa-plus mr-2"></i>Add new
+        </button><!--modal doesn't occupy any space it only appear when neede-->
+      </div>
+    </div>
+    </nav>
+
+    <main class="container">
+        <section>
+            <div class="row task_contents">
+                <div class="c0l-md-6 col-lg-4 mt-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header d-flex justify-content-end">
+                                <button type="button" class="btn btn-outline-info mr-2" name=${id}
+                                onclick="editCard.apply(this, arguments)">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button> 
+                                <button type="button" class="btn btn-outline-danger" name=${id} 
+                                onclick="deleteTask.apply(this, arguments)">
+                                    <i class="fas fa=trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+    
+                        <img src="image.jpg" class="card-img-top" alt="image"/>
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Task Title</h5>
+                            <p class="card-text">This is a description</p>
+                            <span class="badge bg-primary m-1">Important</span>
+                        </div>
+    
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-outline-primary float-right">
+                                Open Task
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+</body>
+</html>    

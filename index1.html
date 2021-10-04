@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <!--Importing Bootstrap CSS-->
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"/>
+</head>
+<body>
+    <!--Bootstrap JS-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFY1zcLA8N1+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous">
+    </script>
+
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <button type="button" class="btn btn-link">Link</button>
+
+    <br><br>
+
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+    <button type="button" class="btn btn-outline-success">Success</button>
+    <button type="button" class="btn btn-outline-danger">Danger</button>
+
+    <div class="row"> <!--bootstrap rangong is 0-12  that is 0 for 0% and 12 for 100%-->
+        <div class="col-md-6 col-lg-4"></div>  <!--in medium device each flex item will occupy 50% of total width-->
+        <div class="col-md-6 col-lg-4"></div>  <!--in large device each flex item will occupy 25% of total width-->
+        <div class="col-md-6 col-lg-4"></div>
+        <div class="col-md-6 col-lg-4"></div>
+    </div>
+</body>
+</html>
+
+1.
+getElementById
+document.getElementById("id");
+2.
+querySelector
+document.querySelector(".classname");  //class
+document.querySelector("#id"); //id
+3.
+innerHTML
+<div class="content"></div>
+document.querySelector(".content").innerHTML = "Hello";
+4.
+appendChild
+<div class="parent"></div>
+const childNode = document.createElement("div");
+childNode.classList.add("mystyle");
+document.getElementById("myDiv").appendChild(childNode);
